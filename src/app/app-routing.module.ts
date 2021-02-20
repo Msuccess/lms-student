@@ -18,6 +18,11 @@ const routes: Routes = [
   { path: 'course', component: BlogGridComponent },
   { path: 'course/:id', component: BlogDetailComponent },
   { path: 'contact-us', component: ContactusComponent },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./components/pages/auth/auth.module').then((m) => m.AuthModule),
+  },
 ];
 
 @NgModule({
