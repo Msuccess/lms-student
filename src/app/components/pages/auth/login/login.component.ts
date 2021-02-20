@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
     this.loading.next(true);
 
-    this.auth.signin(this.signInForm.value).subscribe(
+    this.auth.signIn(this.signInForm.value).subscribe(
       (res: any) => {
         this.loading.next(false);
         this.router.navigate(['/app/dashboard']);

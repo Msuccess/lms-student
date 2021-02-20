@@ -3,28 +3,108 @@
   <div class="contents order-2 order-md-1">
 
     <div class="container">
-      <div class="row align-items-center justify-content-center">
+      <div class="row align-items-center justify-content-center py-5">
         <div class="col-md-7">
           <h3>Register onto <strong>LMS</strong></h3>
           <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
-          <form action="#" method="post">
+          <form [formGroup]="signUpForm" (submit)="onSubmit()">
             <div class="form-group first">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
+              <label for="username">Full Name</label>
+              <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName"
+                [ngClass]="{'is-invalid':submitted && formControl.fullName.errors}">
+
+              <div *ngIf="submitted && formControl.fullName.errors" class="invalid-feedback">
+                <div *ngIf="formControl.fullName.errors.required">
+                  Please provide full name.
+                </div>
+              </div>
             </div>
             <div class="form-group last mb-3">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" placeholder="Your Password" id="password">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" placeholder="Username" formControlName="username"
+                [ngClass]="{'is-invalid': submitted && formControl.username.errors}">
+
+              <div *ngIf="submitted && formControl.username.errors" class="invalid-feedback">
+                <div *ngIf="formControl.username.errors.required">
+                  Please provide username.
+                </div>
+              </div>
+            </div>
+            <div class="form-group last mb-3">
+              <label for="username">Email</label>
+              <input type="email" class="form-control" placeholder="Email" formControlName="email"
+                [ngClass]="{'is-invalid':  formControl.email.errors && submitted}">
+
+              <div *ngIf="submitted && formControl.email.errors" class="invalid-feedback">
+                <div *ngIf="formControl.email.errors.required">
+                  Please provide email.
+                </div>
+                <div *ngIf="formControl.email.errors.email">
+                  Please provide a valid email
+                </div>
+              </div>
+            </div>
+            <div class="form-group last mb-3">
+              <label for="username">Phone Number</label>
+              <input type="text" class="form-control" placeholder="Phone Number" formControlName="phoneNumber"
+                [ngClass]="{'is-invalid': formControl.phoneNumber.errors && submitted}">
+
+              <div *ngIf="submitted && formControl.phoneNumber.errors" class="invalid-feedback">
+                <div *ngIf="formControl.phoneNumber.errors.required">
+                  Please provide phone number.
+                </div>
+              </div>
             </div>
 
-            <div class="d-flex mb-5 align-items-center">
-              <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+            <div class="form-group last mb-3">
+              <label for="username">Class</label>
+              <select name="select" class="form-control" formControlName="userClass"
+                [ngClass]="{'is-invalid': formControl.phoneNumber.errors && submitted}">
+                <option selected>Select Class</option>
+                <option value="opt2">Type 2</option>
+                <option value="opt3">Type 3</option>
+                <option value="opt4">Type 4</option>
+                <option value="opt5">Type 5</option>
+                <option value="opt6">Type 6</option>
+                <option value="opt7">Type 7</option>
+                <option value="opt8">Type 8</option>
+              </select>
+              <div *ngIf="submitted && formControl.phoneNumber.errors" class="invalid-feedback">
+                <div *ngIf="formControl.phoneNumber.errors.required">
+                  Please provide class.
+                </div>
+              </div>
             </div>
 
-            <button type="submit" class="btn btn-block btn-primary">log In</button>
+            <div class="form-group last mb-3">
+              <label for="username">Gender</label>
+              <select class="form-control" formControlName="gender">
+                <option selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            <div class="form-group last mb-3">
+              <label for="username">Password</label>
+              <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                [ngClass]="{'is-invalid': submitted && formControl.password.errors}">
+
+              <div *ngIf="submitted && formControl.password.errors" class="invalid-feedback">
+                <div *ngIf="formControl.password.errors.required">
+                  Please provide password.
+                </div>
+                <div *ngIf="formControl.password.errors.minlength">
+                  Password must contain at least 8 characters
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-block btn-primary">Register</button>
 
             <div class="text-center my-3">
-              <span class=""><a href="#" class="forgot-pass">Register</a></span>
+              <span class=""><a routerLink="/auth/login" class="forgot-pass">Login</a></span>
             </div>
           </form>
         </div>
