@@ -1,22 +1,22 @@
+import { VideoCourseDetailComponent } from './components/pages/courses/video-course-detail/video-course-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Homepage2Component } from './components/pages/homepage2/homepage2.component';
 import { AboutusComponent } from './components/pages/aboutus/aboutus.component';
 
 import { FaqComponent } from './components/pages/faq/faq.component';
-import { Service2Component } from './components/pages/service2/service2.component';
-import { BlogGridComponent } from './components/pages/blog-grid/blog-grid.component';
-import { BlogDetailComponent } from './components/pages/blog-detail/blog-detail.component';
 
 import { ContactusComponent } from './components/pages/contactus/contactus.component';
+import { CoursesComponent } from './components/pages/courses/courses.component';
+import { CourseDetailComponent } from './components/pages/courses/course-detail/course-detail.component';
 
 const routes: Routes = [
   { path: '', component: Homepage2Component },
   { path: 'about-us', component: AboutusComponent },
   { path: 'FAQ', component: FaqComponent },
-  { path: 'service', component: Service2Component },
-  { path: 'course', component: BlogGridComponent },
-  { path: 'course/:id', component: BlogDetailComponent },
+  { path: 'course', component: CoursesComponent },
+  { path: 'course/:id', component: CourseDetailComponent },
+  { path: 'course/video/:id', component: VideoCourseDetailComponent },
   { path: 'contact-us', component: ContactusComponent },
   {
     path: 'auth',

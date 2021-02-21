@@ -1,0 +1,113 @@
+<app-header2></app-header2>
+<!--====== Breadcrumb part Start ======-->
+<div class="breadcrumb-section bg-img-c" style="background-image: url(assets/img/breadcrumb.jpg);">
+  <div class="container">
+    <div class="breadcrumb-text">
+      <h1 class="page-title">Video Course Details</h1>
+      <ul>
+        <li><a routerLink='/'>Home</a></li>
+        <li>Course Details</li>
+      </ul>
+    </div>
+  </div>
+  <div class="breadcrumb-shapes">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </div>
+</div>
+<!--====== Breadcrumb part End ======-->
+
+<!--====== Blog Section Start ======-->
+<section class="blog-section section-gap-top mb-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <!-- Blog Details -->
+        <div class="post-details-wrap">
+          <div class="post-thumb border border-darken-1">
+            <iframe [class.thumbnail]="'thumbnail'" [src]="safeSrc" width="560" height="315" frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+          <div class="post-meta">
+            <ul>
+              <li><i class="far fa-user"></i><a routerLink='/blog-detail'>Nichel Jhon</a></li>
+              <li><i class="far fa-calendar-alt"></i><a routerLink='/blog-detail'>25 Aug 2020</a></li>
+            </ul>
+          </div>
+          <div class="post-content">
+            <h3 class="title">
+              Inspired Design Decisions With Herb Typography Can Be As Exciting As
+              Illustration & Photo
+            </h3>
+
+          </div>
+
+        </div>
+        <!-- Post Author -->
+        <div class="m-5">
+          <hr />
+        </div>
+
+        <!-- Comments Template -->
+        <div class="comment-template">
+          <h3 class="title">Comments</h3>
+          <!-- Comments List -->
+          <ul class="comment-list">
+            <li>
+              <div class="author-img">
+                <img src="assets/img/details/comment-1.png" alt="Image">
+              </div>
+              <div class="comment-content">
+                <h5 class="author-name">John F. Medina<span class="date">25 July 2020</span></h5>
+                <p>
+                  But I must explain to you how all this mistaken idea of denouncing pleasure and
+                  praising pawas born and I will give you a complete account
+                </p>
+                <a routerLink='/blog-detail' class="reply-btn">Reply <i class="far fa-long-arrow-alt-right"></i></a>
+              </div>
+            </li>
+
+          </ul>
+          <!-- Comments form -->
+          <div class="comment-form">
+            <h3 class="title">Leave A Reply</h3>
+            <form action="#">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="input-group mb-30">
+                    <input type="text" placeholder="Your Full Name">
+                    <span class="icon"><i class="far fa-user"></i></span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="input-group mb-30">
+                    <input type="email" placeholder="Your Email ">
+                    <span class="icon"><i class="far fa-envelope"></i></span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-group textarea mb-30">
+                    <textarea placeholder="Write Message"></textarea>
+                    <span class="icon"><i class="far fa-pencil"></i></span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="button" class="main-btn">Send Reply</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-8">
+        <!-- sidebar -->
+        <app-blog-sidebar></app-blog-sidebar>
+      </div>
+    </div>
+  </div>
+</section>
+<!--====== Blog Section End ======-->
+
+<!--====== Client Area End ======-->
+<app-footer2></app-footer2>

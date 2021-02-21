@@ -10,7 +10,7 @@ export class TokenStorage {
    * @returns Observable<string>
    */
   public getAccessToken(returnString?: boolean): any {
-    let token = '';
+    let token;
     if (localStorage.getItem('accessToken')) {
       token = localStorage.getItem('accessToken');
     } else {
@@ -28,8 +28,10 @@ export class TokenStorage {
    * Get refresh token
    * @returns Observable<string>
    */
-  public getRefreshToken(returnString?: boolean): Observable<string> | string {
-    let token = '';
+  public getRefreshToken(
+    returnString?: boolean
+  ): Observable<string> | string | any {
+    let token;
     if (localStorage.getItem('refreshToken')) {
       token = localStorage.getItem('refreshToken');
     } else {
@@ -65,19 +67,6 @@ export class TokenStorage {
     try {
       return of(JSON.parse(user.split(',')));
     } catch (e) {
-      return of([]);
-    }
-  }
-
-  /**
-   * Get  Organization in JSON string
-   * @returns Observable<any>
-   */
-  public getOrganization(): any {
-    const retrievedObject = localStorage.getItem('organization');
-    try {
-      return of(JSON.parse(retrievedObject));
-    } catch (error) {
       return of([]);
     }
   }
