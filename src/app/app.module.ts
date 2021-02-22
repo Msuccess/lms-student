@@ -12,6 +12,7 @@ import { CoursesComponent } from './components/pages/courses/courses.component';
 import { CourseDetailComponent } from './components/pages/courses/course-detail/course-detail.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { VideoCourseDetailComponent } from './components/pages/courses/video-course-detail/video-course-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,13 @@ import { VideoCourseDetailComponent } from './components/pages/courses/video-cou
     CourseDetailComponent,
     VideoCourseDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, LayoutsModule, PdfViewerModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LayoutsModule,
+    PdfViewerModule,
+    HttpClientModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
