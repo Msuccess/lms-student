@@ -24,9 +24,9 @@ const routes: Routes = [
       import('./components/pages/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'extra-class',
+    path: 'extra',
     loadChildren: () =>
-      import('./extra-class/extra-class.module').then(
+      import('./components/pages/extra-class/extra-class.module').then(
         (m) => m.ExtraClassModule
       ),
   },

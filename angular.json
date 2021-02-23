@@ -44,8 +44,7 @@
               "src/assets/js/jquery.easypiechart.min.js",
               "src/assets/js/jquery-ui.min.js",
               "src/assets/js/wow.min.js",
-              "src/assets/js/main.js",
-              "src/assets/jitsi/lib-jitsi-meet.min.js"
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {
