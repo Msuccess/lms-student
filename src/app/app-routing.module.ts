@@ -23,6 +23,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./components/pages/auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: 'extra-class',
+    loadChildren: () =>
+      import('./extra-class/extra-class.module').then(
+        (m) => m.ExtraClassModule
+      ),
+  },
 ];
 
 @NgModule({
