@@ -28,8 +28,14 @@
                 <a routerLink='/about-us' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About
                   us</a>
               </li>
-              <li>
+
+              <li *ngIf="authenticatedUser |async">
                 <a routerLink='/course' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courses</a>
+              </li>
+
+              <li *ngIf="authenticatedUser |async">
+                <a routerLink='/document' routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">Document</a>
               </li>
               <li>
                 <a routerLink='/contact-us' routerLinkActive="active"
@@ -37,7 +43,10 @@
               </li>
             </ul>
           </div>
-          <a routerLink='/auth/register' class="main-btn main-btn-4" style="line-height: 50px;">Register</a>
+
+          <ng-container *ngIf="!(authenticatedUser |async)">
+            <a routerLink='/auth/register' class="main-btn main-btn-4" style="line-height: 50px;">Register</a>
+          </ng-container>
 
           <div class="nav-pushed-item"></div>
         </div>
