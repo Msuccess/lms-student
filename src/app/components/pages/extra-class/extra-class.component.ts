@@ -20,6 +20,7 @@ export class ExtraClassComponent implements OnInit {
       roomName: 'JitsiMeetAPIExample',
       width: 1000,
       height: 1000,
+      jwt: '',
       parentNode: document.querySelector('#meet'),
     };
 
