@@ -34,8 +34,8 @@ export class ExtraClassComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.options = {
       roomName: 'JitsiMeetAPIExample',
-      width: 1200,
-      height: 800,
+      width: '100%',
+      height: '100%',
       jwt: '',
       parentNode: document.querySelector('#meet'),
     };
@@ -44,7 +44,7 @@ export class ExtraClassComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.getSchool();
-    this.getClasses();
+    // this.getSchool();
+    // this.getClasses();
   }
 }
